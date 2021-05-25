@@ -1,0 +1,21 @@
+.local__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.local__container .local__button {
+    width: 200px;
+    padding: 12px;
+    background-color: lemonchiffon;
+    cursor: pointer;
+}
+
+.local__container .local__button:active {
+    background-color: royalblue;
+}
+
+.local__container .local__button .local__text {
+    font-size: 1.85rem;
+    color: maroon;
+}
