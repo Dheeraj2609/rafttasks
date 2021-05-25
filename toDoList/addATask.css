@@ -1,0 +1,138 @@
+body {
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #09641e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.add__task__container {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add__task__container .add__task__info {
+  width: 700px;
+  padding: 36px 67px 43px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.add__task__container .add__task__info .add__task__header__container {
+  width: 100%;
+  margin-bottom: 36px;
+  display: flex;
+  justify-content: center;
+}
+
+.add__task__container
+  .add__task__info
+  .add__task__header__container
+  .task__header {
+  font-family: "Lato-Bold";
+  font-size: 1.5rem;
+  line-height: normal;
+  color: #999999;
+}
+
+.add__task__container .add__task__info .add__task__text {
+  width: 100%;
+  margin-bottom: 6px;
+  display: block;
+  font-family: "Lato-Bold";
+  font-size: 1.125rem;
+  line-height: normal;
+  color: rgba(67, 176, 92, 0.5);
+}
+
+.add__task__input {
+  width: 100%;
+  margin-bottom: 17px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: solid 2px #979797;
+  outline: none;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Lato-Regular";
+}
+
+.add__task__container .add__task__info .add__date__time {
+  width: 100%;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add__task__container .add__task__info .add__date__time .add__datetime {
+  width: 48%;
+}
+
+.add__task__container .add__task__info .add__task__footer {
+  width: 100%;
+  display: flex;
+}
+
+.add__task__container .add__task__info .add__task__footer .task__radio {
+  width: calc(100% - 141px);
+  display: flex;
+  align-items: center;
+}
+
+.add__task__container .add__task__info .add__task__footer .add__task__save {
+  width: 141px;
+  height: 51px;
+  background-color: #43b05c;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.add__task__container
+  .add__task__info
+  .add__task__footer
+  .add__task__save
+  .save__text {
+  font-family: "Lato-Bold";
+  font-size: 1.125rem;
+  line-height: normal;
+  color: #ffffff;
+}
+
+@font-face {
+  font-family: "Lato-Bold";
+  src: url("Lato-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Regular";
+  src: url("Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Medium";
+  src: url("Lato-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Light";
+  src: url("Lato-Light.ttf");
+}
+
+@font-face {
+  font-family: "Lato-SemiBold";
+  src: url("Lato-Semibold.ttf");
+}

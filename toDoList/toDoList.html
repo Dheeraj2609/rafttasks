@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>To Do List</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="toDoList.css" />
+  </head>
+  <body>
+    <div class="to__do__container">
+      <div class="to_do_info">
+        <span class="to__do__text">Your TO-DO List</span>
+        <a href="addATask.html" rel="noopener noreferrer" class="to__do__image">
+          <img src="plus.png" alt="plus" />
+        </a>
+      </div>
+      <div class="task__container">
+        <select name="Task Type" class="drop__down">
+          <option value="personal">Personal</option>
+          <option value="business">Business</option>
+          <option value="others">Others</option>
+        </select>
+        <div class="task__details__container">
+          <span class="task__header"> Tasks </span>
+          <div class="task__detailInfo">
+            <div class="task__detail">
+              <div class="task__status">
+                <span class="task__status__marker"> T </span>
+                <img src="group.png" alt="status" />
+              </div>
+              <div class="task__info">
+                <div class="detailed__info">
+                  <span class="info__heading"></span>
+                  <p class="information"></p>
+                </div>
+                <div class="task__time">
+                  <span class="time__text"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="task__footer">
+          <span class="items__left">uhihihi</span>
+          <div class="status">
+            <ul class="navigate">
+              <li>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link"
+                  >All</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link"
+                  >Completed</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link"
+                  >Active</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link"
+                  >Clear Completed</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="toDoList.js"></script>
+  </body>
+</html>
