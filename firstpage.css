@@ -1,0 +1,900 @@
+body{
+  background-color: #ffffff;
+  max-width: 1680px;
+  margin:0 auto;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+@font-face {
+  font-family: MontserratBold;
+  src: url(Montserrat-Bold.otf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(Montserrat-Medium.otf);
+}
+
+@font-face {
+  font-family: MontserratRegular;
+  src: url(Montserrat-Regular.otf);
+}
+
+@font-face {
+  font-family: MontserratSemiBold;
+  src: url(Montserrat-SemiBold.otf);
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url(OpenSans-Semibold.ttf);
+}
+
+@font-face {
+  font-family: OpenSansBold;
+  src: url(OpenSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: OpenSansRegular;
+  src: url(OpenSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: OpenSansLight;
+  src: url(OpenSans-Light.ttf);
+}
+
+.header {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 65px 0 65px;
+  position: absolute;
+  top: 10px;
+}
+
+.companyDetails{
+  max-width: 1680px;
+  padding: 0 0 15px;
+}
+
+.navigate {
+  margin: 0 50px 0 150px;
+  display:flex;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000;
+  list-style-type:none;
+  justify-content: space-between;
+}
+
+.navigate a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.maxBupaPurchase {
+  max-width: 1680px;
+  display:flex;
+  overflow: auto;
+  box-shadow: 0 3px 5px 0 #000000;
+  background-color: #ffffff;
+  justify-content: space-between;
+}
+
+.maxBupa {
+  width: 15%;
+  padding: 10px 0 0 10px;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.source {
+  width:70%;
+  display:flex;
+  justify-content: space-between;
+}
+
+.sourceLeft {
+  width:50%;
+  padding:10px 15px 10px 15px;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000;
+  list-style-type:none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sourceLeft a {
+  text-decoration: none;
+}
+
+.sourceRight {
+    width:50%;
+    display:flex;
+    padding:0 30px;
+    justify-content: flex-end;
+}
+
+.dropDown {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search{
+  padding: 25px 0 0 10px;
+  cursor: pointer;
+}
+
+.myPolicy {
+  width: 15%;
+  padding:25px 0 0 15px;
+  background-color: #ff9a4e;
+  display: flex;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.myPolicy a {
+  color: white;
+  text-decoration: none;
+}
+
+.arrow {
+  padding:0 0 0 5px;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.picture {
+  width: 100%;
+  padding: 0 0 120px 0;
+  background-image: url("group-35.png");
+  border:none;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.applyToMaxBupa {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 200px 65px 0 65px;
+}
+
+.applyToMaxBupa p {
+  padding: 0px;
+  margin: 0px;
+  font-size: 2em;
+  font-family: MontserratSemiBold;
+  color: #ffffff;
+}
+
+.applyToMaxBupa h2 {
+  padding: 0px;
+  margin: 0px;
+  font-family: Montserrat;
+  color: #ffffff;
+}
+
+.managerAndAgent {
+  box-sizing: border-box;
+  width: 100%;
+  padding:35px 65px 0 65px;
+  display:flex;
+  justify-content: space-between;
+}
+
+.marketingManager {
+  width: 50%;
+}
+
+.marketingManager h3 {
+  font-family: MontserratSemiBold;
+  color: #ffffff;
+}
+
+.wholeMarketingManager {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contentMarketingManager {
+  width: 50%;
+  box-shadow: 0 3px 5px 0 #000000;
+  background-color: #ffffff;
+}
+
+.contentMarketingManager p {
+  padding: 10px 0 10px 10px;
+  margin: 0;
+  font-size: 11px;
+  color: #5e5a58;
+  font-family: OpenSans;
+}
+
+.contentMarketingManager h4 {
+  padding: 0 0 20px 10px;
+  margin: 0;
+  color: #003974;
+  font-family: MontserratSemiBold;
+}
+
+.delhi {
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.delhi h6 {
+  margin: 0;
+  padding: 0;
+  font-family: OpenSans;
+}
+
+.singleLine { 
+  margin:55px 0 0 0;
+  border: solid 0.5px #ffffff;
+}
+
+.agent {
+  width:30%;
+}
+
+.agent h3 {
+  font-family: MontserratSemiBold;
+  color: #ffffff;
+}
+
+.insuranceAgent {
+  box-shadow: 0 3px 5px 0 #000000;
+  background-color: #ffffff;
+}
+
+.insuranceAgent p {
+  padding: 10px 0 10px 10px;
+  margin: 0;
+  font-size: 11px;
+  color: #5e5a58;
+  font-family: OpenSans;
+}
+
+.insuranceAgent h4 {
+  padding: 0 90px 20px 10px;
+  margin: 0;
+  color: #0079ce;
+  font-family: MontserratSemiBold;
+}
+
+.nationwide {
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nationwide h6 {
+  margin: 0;
+  padding: 0;
+  font-family: OpenSans;
+}
+
+.openings {
+  box-sizing: border-box;
+  width:100%;
+  padding: 35px 65px 0 65px;
+}
+
+.button {
+  width: 250px;
+  padding:10px;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  border: solid 2px #ff9a4e;
+  text-align: left;
+  font-family: MontserratSemiBold;
+  color: #ff9a4e;
+  outline: none;
+}
+
+.findJob {
+  margin: -40px 65px 30px 65px;
+  display: flex; 
+  box-shadow: 0 1px 3px 0 #696969;
+  background-color: #ffffff;
+}
+
+.categoryAndLocation {
+  width: 75%;
+  padding: 20px;
+  display: flex;
+}
+
+.jobAndLocation {
+  width: 50%;
+}
+
+.jobAndLocation h5 {
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-family: MontserratSemiBold;
+  color: #5e5a58;
+}
+
+.jobAndLocation select {
+  width: 90%;
+  height: 30px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #f7f7f7;
+}
+
+.myRole {
+  width:25%;
+  padding: 20px;
+  background-color: #ff9a4e;
+  display: flex;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.myRole a {
+  padding: 25px 0 0 5px;
+  font-family: MontserratSemiBold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.smu {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 50px 65px 0 65px;
+  display: flex;
+}
+
+.smuSkills {
+  width: 55%;
+  padding :0 50px 0 0;
+}
+
+.smuSkills h2 {
+  font-family: MontserratSemiBold;
+  color: #003274;
+}
+
+.smuSkills h4 {
+  font-family: OpenSansRegular;
+  color: #464646;
+}
+
+.smuImage {
+  width: 45%;
+  padding: 25px 0 0 50px;
+}
+/*
+.beAPart {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 100px 65px 0 65px;
+  display: none;
+}
+
+.beAPart h2 {
+  padding: 0;
+  margin: 0;
+  font-family: MontserratSemiBold;
+  color: #003274;
+}
+
+.beAPart h4 {
+  padding: 0;
+  margin: 0;
+  line-height: 30px;
+  font-family: OpenSansRegular;
+  color: #464646;
+}
+
+.maxbupaCulture {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 50px 65px 0 65px;
+  display:none;
+}
+
+.cultureButton {
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.anExcitingWorkplace {
+  width: 49.5%;
+  padding: 30px 0 30px 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-family: MontserratBold;
+  background-color: #0079ce;
+  color: #ffffff;
+}
+
+.theMaxbupafamily {
+  width: 49.5%;
+  padding: 30px 0 30px 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-family: Montserrat;
+  background-color: #cae0ef;
+  color: #003274;
+}
+
+.outineOfTab1 {
+  width: 100%;
+  display:none;
+  padding: 350px 0 50px 0;
+  border:none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: right;
+}
+
+.outineOfTab1 p {
+  box-sizing: border-box;
+  width:100%;
+  height: 40px;
+  padding:0 50px 0 0;
+  margin: 0;
+  font-family: MontserratBold;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.outineOfTab1 h4 {
+  box-sizing: border-box;
+  width:100%;
+  padding:0 50px 0 0;
+  margin: 0;
+  font-family: OpenSansLight;
+  color: #ffffff;
+}
+
+.workplaces {
+  width:100%;
+  display: none;
+  justify-content: space-around;
+  background-color: #cae0ef; 
+}
+
+.workplacesbutton1 {
+  width: 20%;
+  padding: 20px 0 20px 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #cae0ef;
+  font-family: MontserratBold; 
+  font-size: 18px;
+  color: #003274;
+  border-bottom: 5px solid #ff9a4e;;
+}
+
+.workplacesbutton2 {
+  width: 20%;
+  padding: 20px 0 20px 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #cae0ef;
+  font-family: MontserratRegular; 
+  font-size: 18px;
+  color: #003274;
+}
+
+.workplacesbutton3 {
+  width: 20%;
+  padding: 20px 0 20px 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #cae0ef;
+  font-family: MontserratRegular; 
+  font-size: 18px;
+  color: #003274;
+}
+
+.workplacesbutton4 {
+  width: 20%;
+  padding: 20px 0 20px 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #cae0ef;
+  font-family: MontserratRegular; 
+  font-size: 18px;
+  color: #003274;
+}*/
+
+.ashish {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 100px 65px 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.iBelieveIn {
+  width:45%;
+  background-color: #e8f4fc;
+  padding: 75px 0 0 65px;
+}
+
+.iBelieveIn h2 {
+  font-family: MontserratSemiBold; 
+  padding:0 50px 0 0;
+  margin: 0;
+  color: #003274;
+}
+
+.ashishPara {
+  font-family: OpenSansRegular;
+  padding:20px 50px 0 0;
+  margin: 0;
+  color: #464646;
+}
+
+.ashishMehrota {
+  display: flex;
+  padding: 50px 0 50px 0;
+}
+
+.ashishManagingDirector {
+  padding: 20px 0 0 20px;
+}
+
+.ashishManagingDirector h3 {
+  font-family: MontserratBold;
+  padding: 0;
+  margin: 0;
+  color: #1e4679;
+}
+
+.managingDirector {
+  font-family: MontserratRegular;
+  padding: 0;
+  margin: 0;
+  color: #1e4679;
+}
+
+.ashishImage {
+  width: 55%;
+  object-fit: contain;
+}
+
+.employees {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 100px 0 0 65px;
+  display: flex;
+}
+
+.applyForInsurance {
+  width:30%;
+}
+
+.applyForInsurance h2{
+  padding: 20px 0 20px 0;
+  margin: 0;
+  font-family: MontserratSemiBold;
+  color: #003274;
+}
+
+.contribute {
+  padding: 0 0 40px 0;
+  margin: 0;
+  font-family: OpenSansRegular;
+  color: #464646;
+}
+
+.applyNow {
+  width: 250px;
+  padding:10px;
+  background-color: #ff9a4e;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  border: solid 2px #ff9a4e;
+  font-family: MontserratSemiBold;
+  color: #ffffff;
+  outline: none;
+}
+
+.employeesList {
+  width: 70%;
+  padding: 20px;
+
+  overflow-x: auto;
+  display: flex;
+}
+
+.employers {
+  position: relative;
+}
+.photograph {
+  margin:50px 0 0 0;
+ position: absolute;
+}
+
+.employeeDetails {
+  min-width:400px;
+  margin: 0 100px 0 50px;
+  box-shadow: 0 0 15px 0 #a3a3a3;
+  background-color: #ffffff;
+}
+
+.employeeDetails h4 {
+  padding: 0 10px 10px 75px;
+  margin: 0;
+  font-family: OpenSansBold;
+  color: #464646;
+}
+
+.joined2Years {
+  padding: 40px 10px 10px 75px;
+  margin: 0;
+  font-size: 0.625rem;
+  font-family: OpenSans;
+  color: #9c9c9c;
+}
+
+.accountant {
+  padding: 0 10px 10px 75px;
+  margin: 0;
+  font-size: 1rem;
+  font-family: OpenSans;
+  color: #1e4679;
+}
+
+.workingWithMaxBupa {
+  padding: 0 10px 75px 75px;
+  margin: 0;
+  font-size: 1rem;
+  font-family: OpenSansRegular;
+  color: #4d4d4e;
+}
+
+.footer {
+  margin: 100px 65px 0 65px;
+  display:flex;
+  justify-content: center;
+  box-shadow: 0 3px 5px 0 #000000;
+  background-color: #003274;
+  color: #ffffff;
+  font-family: OpenSans;
+}
+
+.footerContents {
+  width: 100%;
+  padding: 20px 0;
+  border:none;
+  display:block;
+  background-color: #003274;
+  color: #ffffff;
+  font-family: OpenSans; 
+  cursor: pointer;
+  outline: none;
+}
+
+.footerHideContents {
+  display: none;
+}
+
+.footerContainer {
+  margin:10px;
+}
+
+.crossSymbol {
+
+  width: 99%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.crossSymbol span {
+  cursor: pointer;
+}
+
+.footerDetails {
+  padding: 20px;
+  display:flex;
+}
+
+.footerColumn {
+  width:20%;
+  padding:10px;
+}
+
+.footerColumn ul {
+  padding :0px;
+}
+
+.footerColumn li {
+  list-style-type:none;
+  font-family: OpenSansBold;
+}
+
+.footerColumn li a{
+  text-decoration: none;
+  color:#ffffff;
+  font-family: OpenSansRegular;
+}
+
+.footerBottom {
+  border-top: solid 0.5px lightblue ;
+  padding: 30px;
+  font-family: OpenSansRegular;
+}
+
+@media screen and ( max-width: 767px) {
+  .header {
+    padding: 0;
+  }
+
+  .source {
+    width: 70%;
+    align-items: center;
+  }
+
+  .sourceLeft {
+    width: 80%;
+    padding: 0 0 0 10px;
+  }
+
+  .sourceRight {
+    width: 20%;
+    padding: 0;
+  }
+
+  .search {
+    padding: 5px 5px 5px 0;
+  }
+
+  .myPolicy {
+    width: 30%;
+    padding: 0 0 0 10px;
+    align-items: center;
+  }
+
+  .companyDetails{
+  display: none;
+  }
+
+  .dropDown {
+    display: none;
+  }
+
+  .maxBupa {
+    display: none;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .picture {
+    padding: 0 0 60px 0
+  }
+
+  .applyToMaxBupa {
+    padding: 150px 10px 0 10px;
+  }
+
+  .managerAndAgent {
+    padding:35px 10px 0 10px;
+    display: block;
+  } 
+
+  .marketingManager {
+    width: 100%;
+  }
+
+  .wholeMarketingManager {
+    width: 100%;
+  }
+
+  .singleLine {
+    display: none;
+  }
+
+  .agent {
+    width: 100%;
+  }
+
+  .insuranceAgent {
+    width: 50%;
+  }
+
+  .openings {
+    padding: 25px 10px 0 10px;
+  }
+
+  .findJob {
+    margin: -40px 10px 30px 10px;
+    display: block;
+  }
+
+  .categoryAndLocation {
+    width: 100%;
+    padding : 10px 10px 10px 10px;
+    display: block;
+  }
+
+  .jobAndLocation {
+    width: 100%;
+  }
+
+  .myRole {
+    width:100%;
+    justify-content: center;
+  }
+
+  .smu {
+    display: block;
+    padding:0 10px 0 10px;
+  }
+
+  .smuImage {
+    padding: 25px 0 0 0;
+    width:80%;
+  }
+
+  .ashish {
+    display: block;
+    padding: 50px 0 0 0;
+  }
+
+  .iBelieveIn {
+    width: 100%;
+    padding: 50px 0 0 10px;
+    margin: 0 10px 0 10px
+  }
+
+  .ashishImage {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 10px 0 10px;
+  }
+
+  .employees {
+    display: block;
+    padding: 75px 10px 0 10px;
+  }
+
+  .applyForInsurance {
+    width: 100%;
+  }
+
+  .employeesList {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 50px 10px 0 10px;
+  }
+
+  .footer {
+    width: 100%;
+    margin: 50px 0 0 0;
+  }
+}
