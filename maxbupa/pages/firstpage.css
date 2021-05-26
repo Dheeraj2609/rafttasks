@@ -9,46 +9,6 @@ body{
   width: 0;
 }
 
-@font-face {
-  font-family: MontserratBold;
-  src: url(Montserrat-Bold.otf);
-}
-
-@font-face {
-  font-family: Montserrat;
-  src: url(Montserrat-Medium.otf);
-}
-
-@font-face {
-  font-family: MontserratRegular;
-  src: url(Montserrat-Regular.otf);
-}
-
-@font-face {
-  font-family: MontserratSemiBold;
-  src: url(Montserrat-SemiBold.otf);
-}
-
-@font-face {
-  font-family: OpenSans;
-  src: url(OpenSans-Semibold.ttf);
-}
-
-@font-face {
-  font-family: OpenSansBold;
-  src: url(OpenSans-Bold.ttf);
-}
-
-@font-face {
-  font-family: OpenSansRegular;
-  src: url(OpenSans-Regular.ttf);
-}
-
-@font-face {
-  font-family: OpenSansLight;
-  src: url(OpenSans-Light.ttf);
-}
-
 .header {
   box-sizing: border-box;
   width: 100%;
@@ -159,7 +119,7 @@ body{
 .picture {
   width: 100%;
   padding: 0 0 120px 0;
-  background-image: url("group-35.png");
+  background-image: url("../assets/images/group-35.png");
   border:none;
   background-repeat: no-repeat;
   background-size: cover;
