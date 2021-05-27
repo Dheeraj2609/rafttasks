@@ -1,21 +1,5 @@
 if (typeof Storage !== "undefined") {
-  var radios = localStorage.getItem("radio");
-  window.onload = function () {
-    document.querySelector(".drop__down").value = radios;
-    if (radios != document.querySelector(".drop__down").value) {
-      document.querySelector(".task__detailInfo").style.display = "none";
-    } else document.querySelector(".task__detailInfo").style.display = "block";
-  };
-
-  document.querySelector(".drop__down").onchange = function () {
-    if (radios != document.querySelector(".drop__down").value) {
-      document.querySelector(".task__detailInfo").style.display = "none";
-    } else document.querySelector(".task__detailInfo").style.display = "block";
-  };
-
-  document.querySelector(".info__heading").innerHTML = localStorage.getItem("task");
-  document.querySelector(".information").innerHTML = localStorage.getItem("description");
-  
+  var get_plateform = localStorage.getItem("radio");
   var get_date = localStorage.getItem("date");
   var get_time = localStorage.getItem("time");
   var user_date = new Date(get_date);
@@ -29,17 +13,34 @@ if (typeof Storage !== "undefined") {
     times[1]
   );
   var ms = user_full_date - today_date;
+
+  window.addEventListener("load", onLoad);
+  document.querySelector(".taskCntr__drop").addEventListener("change", onChange);
+  document.querySelector(".detlInfo__head").innerHTML = localStorage.getItem("task");
+  document.querySelector(".detlInfo__info").innerHTML = localStorage.getItem("description");
+
   days = Math.floor(ms / (24 * 60 * 60 * 1000));
   daysms = ms % (24 * 60 * 60 * 1000);
   hours = Math.floor(daysms / (60 * 60 * 1000));
   hoursms = ms % (60 * 60 * 1000);
   minutes = Math.floor(hoursms / (60 * 1000));
   if (days > 0 || hours > 0 || minutes > 0) {
-    document.querySelector(".time__text").innerHTML = days + " days " + hours + " hrs " + minutes + " mins to go";
+    document.querySelector(".taskTime__text").innerHTML = days + " days " + hours + " hrs " + minutes + " mins to go";
   } else if (days <= 0 || hours <= 0 || minutes <= 0) {
-    document.querySelector(".time__text").innerHTML = "OVERDUE!!!";
+    document.querySelector(".taskTime__text").innerHTML = "OVERDUE!!!";
   }
 
+  function onLoad() {
+    document.querySelector(".taskCntr__drop").value = get_plateform;
+    if (get_plateform != document.querySelector(".taskCntr__drop").value) {
+      document.querySelector(".detailCntr__info").style.display = "none";
+    } else document.querySelector(".detailCntr__info").style.display = "block";
+  }
+  function onChange() {
+    if (get_plateform != document.querySelector(".taskCntr__drop").value) {
+      document.querySelector(".detailCntr__info").style.display = "none";
+    } else document.querySelector(".detailCntr__info").style.display = "block";
+  }
   /*
     var user_day = user_date.getDate();
     var user_month = (user_date.getMonth() + 1);
@@ -53,11 +54,11 @@ if (typeof Storage !== "undefined") {
 }
 
 if (
-  document.querySelector(".info__heading").innerHTML == "" ||
-  document.querySelector(".information").innerHTML == "" ||
-  document.querySelector(".time__text").innerHTML == ""
+  document.querySelector(".detlInfo__head").innerHTML == "" ||
+  document.querySelector(".detlInfo__info").innerHTML == "" ||
+  document.querySelector(".taskTime__text").innerHTML == ""
 ) {
-  document.querySelector(".task__container").style.display = "none";
+  document.querySelector(".taskCntr").style.display = "none";
 } else {
-  document.querySelector(".task__container").style.display = "block";
+  document.querySelector(".taskCntr").style.display = "block";
 }

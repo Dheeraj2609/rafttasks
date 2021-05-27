@@ -8,45 +8,45 @@
     <link rel="stylesheet" type="text/css" href="../../assets/font-awesome/fonts.css" />
   </head>
   <body>
-    <div class="add__task__container">
-      <div class="add__task__info">
-        <div class="add__task__header__container">
-          <span class="task__header">Add a new Task</span>
+    <div class="addCntr">
+      <div class="taskInfo">
+        <div class="taskInfo__headCntr">
+          <span class="taskInfo__headCntr__head">Add a new Task</span>
         </div>
-        <span class="add__task__text">Add Task</span>
+        <span class="taskInfo__text">Add Task</span>
         <input
           type="text"
           name="AddTask"
-          class="add__task__input"
+          class="taskInfo__input"
           placeholder="What needs to be done ?"
         />
-        <span class="add__task__text">Description</span>
+        <span class="taskInfo__text">Description</span>
         <input
           type="text"
           name="Describe"
-          class="add__task__input task__describe"
+          class="taskInfo__input taskInfo__des"
           placeholder="Describe your task"
         />
-        <div class="add__date__time">
-          <div class="add__datetime">
-            <span class="add__task__text">Date</span>
+        <div class="addDateTime">
+          <div class="addDateTime__add">
+            <span class="taskInfo__text">Date</span>
             <input
               type="date"
               name="Date"
-              class="add__task__input task__date"
+              class="taskInfo__input taskDate"
             />
           </div>
-          <div class="add__datetime">
-            <span class="add__task__text">Time</span>
+          <div class="addDateTime__add">
+            <span class="taskInfo__text">Time</span>
             <input
               type="time"
               name="Time"
-              class="add__task__input task__time"
+              class="taskInfo__input taskTime"
             />
           </div>
         </div>
-        <div class="add__task__footer">
-          <form class="task__radio">
+        <div class="footer">
+          <form class="radio">
             <input type="radio" id="personal" name="task" value="personal" />
             <label for="personal">Personal</label>
             <input type="radio" id="business" name="task" value="business" />
@@ -57,9 +57,9 @@
           <a
             href="../../pages/toDoList/toDoList.html"
             rel="noopener noreferrer"
-            class="add__task__save"
+            class="saveBtn"
           >
-            <span class="save__text">Save</span>
+            <span class="saveBtn__text">Save</span>
           </a>
         </div>
       </div>

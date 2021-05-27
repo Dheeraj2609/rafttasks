@@ -22,7 +22,7 @@ body{
   padding: 0 0 15px;
 }
 
-.navigate {
+.status__nav {
   margin: 0 50px 0 150px;
   display:flex;
   font-family: Montserrat;
@@ -33,7 +33,7 @@ body{
   justify-content: space-between;
 }
 
-.navigate a {
+.status__nav a {
   color: #ffffff;
   text-decoration: none;
 }
