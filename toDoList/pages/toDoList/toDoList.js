@@ -1,5 +1,4 @@
-if (typeof Storage !== "undefined") {
-  //Checking browser support
+if (typeof Storage !== "undefined") { //Checking browser support
   var get_plateform = localStorage.getItem("radio"); //Setting values to variables from thee local storage
   var get_date = localStorage.getItem("date");
   var get_time = localStorage.getItem("time");
@@ -16,13 +15,9 @@ if (typeof Storage !== "undefined") {
   var ms = user_full_date - today_date; //Getting difference between current and given date and set it to variable
 
   window.addEventListener("load", onLoad); //onload event
-  document
-    .querySelector(".taskCntr__drop")
-    .addEventListener("change", onChange); //onchange event
-  document.querySelector(".detlInfo__head").innerHTML =
-    localStorage.getItem("task"); //Setting task head and description
-  document.querySelector(".detlInfo__info").innerHTML =
-    localStorage.getItem("description"); //from local storage
+  document.querySelector(".taskCntr__drop").addEventListener("change", onChange); //onchange event
+  document.querySelector(".detlInfo__head").innerHTML = localStorage.getItem("task"); //Setting task head and description
+  document.querySelector(".detlInfo__info").innerHTML = localStorage.getItem("description"); //from local storage
 
   days = Math.floor(ms / (24 * 60 * 60 * 1000)); //calculating diffenrce in days hours and minutes
   daysms = ms % (24 * 60 * 60 * 1000);
@@ -31,8 +26,7 @@ if (typeof Storage !== "undefined") {
   minutes = Math.floor(hoursms / (60 * 1000));
   if (days > 0 || hours > 0 || minutes > 0) {
     // checking and Displaying the differnce in dates
-    document.querySelector(".taskTime__text").innerHTML =
-      days + " days " + hours + " hrs " + minutes + " mins to go";
+    document.querySelector(".taskTime__text").innerHTML = days + " days " + hours + " hrs " + minutes + " mins to go";
   } else if (days <= 0 || hours <= 0 || minutes <= 0) {
     //checking whether date is less than current date
     document.querySelector(".taskTime__text").innerHTML = "OVERDUE!!!"; //If true displaying OVERDUE!!!
