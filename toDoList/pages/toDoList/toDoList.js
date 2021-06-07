@@ -1,10 +1,19 @@
 if (typeof Storage !== "undefined") { //Checking browser support
-  var get_plateform = localStorage.getItem("radio"); //Setting values to variables from thee local storage
-  var get_date = localStorage.getItem("date");
-  var get_time = localStorage.getItem("time");
-  var user_date = new Date(get_date);
+  var get_info = JSON.parse(localStorage.getItem("userval"));
+ 
+    if(localStorage.getItem("temp") == undefined){
+        var Thelist = [];
+        localStorage.setItem("temp", JSON.stringify(Thelist));
+      }
+      var Thelist_parse = localStorage.getItem("temp");
+      var Thelist = JSON.parse(Thelist_parse);
+      Thelist.push(get_info);
+      localStorage.setItem("temp",JSON.stringify(Thelist));
+      console.log(Thelist);
+  console.log(get_info);
+  var user_date = new Date(get_info[2]);
   var today_date = new Date(); //Setting today's date to the variable
-  var times = get_time.split(":"); //Splitting time with :
+  var times = get_info[3].split(":"); //Splitting time with :
   var user_full_date = new Date( // setting variable with the date format local storage data
     user_date.getFullYear(),
     user_date.getMonth(),
@@ -14,10 +23,23 @@ if (typeof Storage !== "undefined") { //Checking browser support
   );
   var ms = user_full_date - today_date; //Getting difference between current and given date and set it to variable
 
+
+  /*
+  var i;
+  var listinfo = [0];
+  for(i in listinfo){
+    for(i in get_info){
+      listinfo.push(get_info[i]);
+    }
+    
+  }
+  console.log(listinfo);*/
+
+
   window.addEventListener("load", onLoad); //onload event
   document.querySelector(".taskCntr__drop").addEventListener("change", onChange); //onchange event
-  document.querySelector(".detlInfo__head").innerHTML = localStorage.getItem("task"); //Setting task head and description
-  document.querySelector(".detlInfo__info").innerHTML = localStorage.getItem("description"); //from local storage
+  document.querySelector(".detlInfo__head").innerHTML = get_info[0]; //Setting task head and description
+  document.querySelector(".detlInfo__info").innerHTML = get_info[1]; //from local storage
 
   days = Math.floor(ms / (24 * 60 * 60 * 1000)); //calculating diffenrce in days hours and minutes
   daysms = ms % (24 * 60 * 60 * 1000);
@@ -34,14 +56,14 @@ if (typeof Storage !== "undefined") { //Checking browser support
 
   function onLoad() {
     // onload function
-    document.querySelector(".taskCntr__drop").value = get_plateform;
-    if (get_plateform != document.querySelector(".taskCntr__drop").value) {
+    document.querySelector(".taskCntr__drop").value = get_info[4];
+    if (get_info[4] != document.querySelector(".taskCntr__drop").value) {
       document.querySelector(".detailCntr__info").style.display = "none";
     } else document.querySelector(".detailCntr__info").style.display = "block";
   }
   function onChange() {
     //onchange function
-    if (get_plateform != document.querySelector(".taskCntr__drop").value) {
+    if (get_info[4] != document.querySelector(".taskCntr__drop").value) {
       document.querySelector(".detailCntr__info").style.display = "none";
     } else document.querySelector(".detailCntr__info").style.display = "block";
   }
