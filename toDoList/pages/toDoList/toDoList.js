@@ -2,7 +2,7 @@ if (typeof Storage !== "undefined") { //Checking browser support
   var get_info = JSON.parse(localStorage.getItem("userval"));
   var selPurpose = document.querySelector(".taskCntr__drop").value;
   console.log(get_info);
-  window.addEventListener("load", onLoad); //onload event
+  window.addEventListener("load", allTask); //onload event
   document.querySelector(".taskCntr__drop").addEventListener("change", onChange); //onchange event
   document.querySelector(".navAll").addEventListener("click", allTask);
   document.querySelector(".navComp").addEventListener("click", completedTask);
@@ -10,9 +10,6 @@ if (typeof Storage !== "undefined") { //Checking browser support
   //document.querySelector(".navClear").addEventListener("click", clearComp);
   if(!get_info) {
     document.querySelector(".taskCntr").style.display = "none"; //if task is not filled task will never displayed
-  } 
-  function onLoad() {
-   allTask();  
   }
   function onChange () {
     if(localStorage.getItem("type") == "active") {
@@ -135,11 +132,11 @@ if (typeof Storage !== "undefined") { //Checking browser support
     </div>
     <div class="taskInfo">
     <div class="detlInfo">
-      <span class="detlInfo__head">` + task + `</span>
-      <p class="detlInfo__info">` + description + `</p>
+      <span class="detlInfo__head">  ${task} </span>
+      <p class="detlInfo__info">  ${description} </p>
     </div>
     <div class="taskTime">
-      <span class="taskTime__text">` + time_string + `</span>
+      <span class="taskTime__text"> ${time_string} </span>
     </div> </div> </div>`
     var y = document.querySelector(".detailCntr__info").innerHTML;
     document.querySelector(".detailCntr__info").innerHTML = x+y;
