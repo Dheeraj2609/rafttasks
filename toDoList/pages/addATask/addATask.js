@@ -8,6 +8,11 @@ if (typeof Storage !== "undefined") { // checking browser support
       tasktime: document.querySelector(".taskTime").value ,
       taskpurpose: document.querySelector('input[name="task"]:checked').value
     };
+    if(input_info.taskName == "" || input_info.taskdesc == "" || input_info.taskdate == "" ||
+       input_info.tasktime == "" || input_info.taskpurpose == ""){
+      alert("Fill all the fields!!!");
+    }
+    else{
     var objectval = JSON.parse(localStorage.getItem("userval"));  //getting local storage value
     if (!objectval){
       objectval = [];    //creating array if local storage value is null
@@ -15,6 +20,7 @@ if (typeof Storage !== "undefined") { // checking browser support
     objectval.push(input_info);  //push the latest input 
     console.log(input_info);
     localStorage.setItem("userval", JSON.stringify(objectval)); //Storing values in the browser local storage
+    }
   }
 } else {
   alert("Browser does not support"); // display when browser doesnot support local storage
