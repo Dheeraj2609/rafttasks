@@ -1,22 +1,15 @@
 if (typeof Storage !== "undefined") { //Checking browser support
   var get_info = JSON.parse(localStorage.getItem("userval"));
   var selPurpose = document.querySelector(".taskCntr__drop").value;
-  var items = 0;
-  for (i=0;i<get_info.length;i++){
-    var time_string = finddate(get_info[i].taskdate,get_info[i].tasktime);
-    if(time_string != "OVERDUE!!!"){
-      items++;
-    }
+  if(!get_info || get_info == "") {
+    document.querySelector(".taskCntr").style.display = "none"; //if task is not filled task will never displayed
   }
-  document.querySelector(".taskLeft").innerHTML = items + " items left";
   window.addEventListener("load", onLoad); //onload event
   document.querySelector(".taskCntr__drop").addEventListener("change", onChange); //onchange event
   var btns = document.getElementsByClassName("status__nav__link");
-  if(get_info == "") {
-    document.querySelector(".taskCntr").style.display = "none"; //if task is not filled task will never displayed
-  }
   function onLoad(){
     statusTask("All");
+    itemsLeft();
   }
   for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", onClick);  
@@ -30,21 +23,17 @@ if (typeof Storage !== "undefined") { //Checking browser support
   function onClick(event){
     statusTask(event.target.innerHTML);
     event.preventDefault();
+    btns.className.remove(/\bfocusButton\b/, " ");
+    this.className += "focusButton";
   }
   function onChange () {
     statusTask(localStorage.getItem("type"));
+    itemsLeft();
   }
   function statusTask(status){
     switch(status){
       case  "All":  
-        localStorage.setItem("type","All");
-        selPurpose = document.querySelector(".taskCntr__drop").value;
-        var temp = get_info.filter(onchanging);
-        function onchanging(check) {
-          return check.taskpurpose == selPurpose;
-        }
-        console.log(temp);
-        document.querySelector(".detailCntr__info").innerHTML = "";
+        var temp = filter("All");
         for (i=0;i<temp.length;i++){
           var time_string = finddate(temp[i].taskdate,temp[i].tasktime);
           console.log(time_string);
@@ -52,14 +41,7 @@ if (typeof Storage !== "undefined") { //Checking browser support
         }
       break;
       case "Active":
-        localStorage.setItem("type","Active");
-        selPurpose = document.querySelector(".taskCntr__drop").value;
-        var temp = get_info.filter(onchanging);
-        function onchanging(check) {
-          return check.taskpurpose == selPurpose;
-        }
-        console.log(temp);
-        document.querySelector(".detailCntr__info").innerHTML = "";
+        var temp = filter("Active");
         for (i=0;i<temp.length;i++){
           var time_string = finddate(temp[i].taskdate,temp[i].tasktime);
           if(time_string != "OVERDUE!!!"){
@@ -68,14 +50,7 @@ if (typeof Storage !== "undefined") { //Checking browser support
         }
       break;
       case "Completed":
-        localStorage.setItem("type","Completed");
-        selPurpose = document.querySelector(".taskCntr__drop").value;
-        var temp = get_info.filter(onchanging);
-        function onchanging(check) {
-          return check.taskpurpose == selPurpose;
-        }
-        console.log(temp);
-        document.querySelector(".detailCntr__info").innerHTML = "";
+        var temp = filter("Completed");
         for (i=0;i<temp.length;i++){
           var time_string = finddate(temp[i].taskdate,temp[i].tasktime);
           if(time_string == "OVERDUE!!!"){
@@ -84,20 +59,36 @@ if (typeof Storage !== "undefined") { //Checking browser support
         }
       break;
       case "Clear Completed":
-        var temp = JSON.parse(localStorage.getItem("userval"));
-        selPurpose = document.querySelector(".taskCntr__drop").value;
-        console.log(temp);
-        for (i=0;i<temp.length;i++){
-          var time_string = finddate(temp[i].taskdate,temp[i].tasktime);
-          if(time_string == "OVERDUE!!!"){
-           temp.splice(i,1);
-           i--;
+        var temp2  = [];
+        var allInfo = JSON.parse(localStorage.getItem("userval"));
+        var purpose = document.querySelector(".taskCntr__drop").value;
+        for (i=0;i<allInfo.length;i++){
+          if(allInfo[i].taskpurpose == purpose){
+            var time_string = finddate(allInfo[i].taskdate,allInfo[i].tasktime);
+            if(time_string !== "OVERDUE!!!") {
+              temp2.push(allInfo[i]);
+            }
+          }
+          else{
+            temp2.push(allInfo[i]);
           }
         }
-        localStorage.setItem("userval", JSON.stringify(temp));
+        console.log(temp2);
+        localStorage.setItem("userval", JSON.stringify(temp2));
         location.reload();
       break;
     }
+  }
+  function filter(type) {
+    localStorage.setItem("type",type);
+    selPurpose = document.querySelector(".taskCntr__drop").value;
+    var temp = get_info.filter(onchanging);
+    function onchanging(check) {
+      return check.taskpurpose == selPurpose;
+    }
+    console.log(temp);
+    document.querySelector(".detailCntr__info").innerHTML = "";
+    return temp;
   }
   function finddate(taskdate,tasktime){  //to find the remaining date to do task
     var user_date = new Date(taskdate);
@@ -139,6 +130,21 @@ if (typeof Storage !== "undefined") { //Checking browser support
     </div> </div> </div>`
     var y = document.querySelector(".detailCntr__info").innerHTML;
     document.querySelector(".detailCntr__info").innerHTML = x+y;
+  }
+  function itemsLeft() {
+    var items = 0;
+    selPurpose = document.querySelector(".taskCntr__drop").value;
+    var temp1 = get_info.filter(onchanging);
+    function onchanging(check) {
+      return check.taskpurpose == selPurpose;
+    }
+    for (i=0;i<temp1.length;i++){
+      var time_string = finddate(temp1[i].taskdate,temp1[i].tasktime);
+      if(time_string != "OVERDUE!!!"){
+        items++;
+      }
+    }
+    document.querySelector(".taskLeft").innerHTML = items + " items left";
   }
 } 
 else {

@@ -211,11 +211,17 @@ body {
   border: solid 1px #43b05c;
   border-radius: 16.5px;
 }
-
+/*
 .toDoCntr
   .taskCntr
   .footer
-  .status__nav__link:focus {
+  .status__nav__link:focus{
+  border: solid 1px #43b05c;
+  border-radius: 16.5px;
+}
+*/
+
+.status__nav__link .focusButton {
   border: solid 1px #43b05c;
   border-radius: 16.5px;
 }
@@ -223,11 +229,30 @@ body {
 @media screen and (max-width: 767px) {
   .toDoCntr .toDoInfo {
     width: 320px;
+    padding: 18px; 
     border-radius: 70px;
   }
 
   .toDoCntr .toDoInfo__text {
     font-size: 1.5rem;
   }
-}
+  .toDoCntr .toDoInfo__image {
+    width: 40px;
+    height: 40px;
+  }
+ 
+  .toDoCntr .taskCntr {
+    width: 90%;
+    margin-top: 12px;
+    padding: 24px;
+  }
 
+  .toDoCntr .taskCntr .footer {
+    display: block;
+  }
+
+  .toDoCntr .taskCntr .footer .status {
+    width: 100%;
+    margin-top: 16px;
+}
+}
