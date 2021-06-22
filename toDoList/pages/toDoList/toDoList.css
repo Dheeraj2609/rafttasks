@@ -227,8 +227,13 @@ body {
 }
 
 @media screen and (max-width: 767px) {
+
+  .toDoCntr {
+    width: 90%;
+  }
+
   .toDoCntr .toDoInfo {
-    width: 320px;
+    width: 265px;
     padding: 18px; 
     border-radius: 70px;
   }
@@ -240,19 +245,53 @@ body {
     width: 40px;
     height: 40px;
   }
+
+  .detailCntr__info {
+    height: 250px;
+  }
  
   .toDoCntr .taskCntr {
     width: 90%;
     margin-top: 12px;
-    padding: 24px;
+    padding: 10px;
+  }
+
+  .infoDetail .taskInfo {
+    padding-left: 12px;
+    justify-content: space-between;
+  }
+
+  .infoDetail .taskInfo .detlInfo {
+    width: calc(100% - 90px);
+  }
+
+  .infoDetail .taskInfo .taskTime {
+    width: 90px;
   }
 
   .toDoCntr .taskCntr .footer {
     display: block;
   }
 
+  .toDoCntr .taskCntr .footer .taskLeft {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #43b05c;
+  }
+
   .toDoCntr .taskCntr .footer .status {
     width: 100%;
     margin-top: 16px;
-}
+  }
+
+  .toDoCntr .taskCntr .footer .status__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toDoCntr .taskCntr .footer .status__nav__link {
+    margin: 4px;
+  }
 }
